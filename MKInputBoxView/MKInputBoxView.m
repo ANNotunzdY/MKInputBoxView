@@ -214,13 +214,13 @@
         UIVisualEffect *effect  = [UIBlurEffect effectWithStyle:style];
         self.visualEffectView   = [[UIVisualEffectView alloc]initWithEffect:effect];
     } else {
-        self.titleLabelTextColor     = [UIColor whiteColor];
-        self.messageLabelTextColor   = [UIColor whiteColor];
-        self.elementBackgroundColor  = [UIColor whiteColor];
-        self.buttonBackgroundColor   = [UIColor blackColor];
-        self.buttonLabelTextColor   = [UIColor whiteColor];
-        self.contentBackgroundColor = [UIColor blackColor];
-        self.buttonBorderColor = [UIColor whiteColor];
+        self.titleLabelTextColor     = self.titleLabelTextColor ?: [UIColor whiteColor];
+        self.messageLabelTextColor   = self.messageLabelTextColor ?:[UIColor whiteColor];
+        self.elementBackgroundColor  = self.elementBackgroundColor ?:[UIColor whiteColor];
+        self.buttonBackgroundColor   = self.buttonBackgroundColor ?:[UIColor blackColor];
+        self.buttonLabelTextColor   = self.buttonLabelTextColor ?:[UIColor whiteColor];
+        self.contentBackgroundColor = self.contentBackgroundColor ?:[UIColor blackColor];
+        self.buttonBorderColor = self.buttonBorderColor ?:[UIColor whiteColor];
     }
 
     CGFloat padding         = 10.0f;
